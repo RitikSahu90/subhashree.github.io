@@ -1,0 +1,25 @@
+body,html{
+    height: 100%;
+    width: 100%;
+}
+.container-fluid{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background-color: rgb(7, 66, 75);
+    justify-content: center;
+    align-items: center;
+}
+.latter{
+    background-color: antiquewhite;
+    width: 50%;
+    height: 50%;
+    overflow: scroll;
+}
+@media (max-width: 667px) {
+    .latter {
+        width: 80%;
+        height: 30%;
+        overflow: scroll; 
+    }
+}
