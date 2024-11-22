@@ -9,17 +9,92 @@ body,html{
     background-color: rgb(7, 66, 75);
     justify-content: center;
     align-items: center;
+    position: relative;
 }
-.latter{
-    background-color: antiquewhite;
-    width: 50%;
-    height: 50%;
-    overflow: scroll;
+.back{
+    position: relative;
+    width: 368px;
+    height: 350px;
+    background: rgb(13, 109, 123);
+}
+.front{
+    position: relative;
+    border-right: 200px solid rgb(17, 138, 156);
+    border-top: 175px solid transparent;
+    border-bottom: 175px solid transparent;
+    height: 0;width: 0;
+    left: -200px; top:0;
+    z-index: 3;
+}
+.front:before{
+    content: "";
+    position: absolute;
+    border-bottom: 200px solid rgb(17, 138, 156);
+    border-left: 175px solid transparent;
+    border-right: 175px solid transparent;
+    height: 0;width: 0;
+    left: -245px; top: -100px;
+    rotate: 90deg;
+}
+.front:after{
+    content: "";
+    position: absolute;
+    border-bottom: 200px solid rgb(16, 124, 141);
+    border-left: 185px solid transparent;
+    border-right: 185px solid transparent;
+    height: 0;width: 0;
+    left: -170px; top: -25px;
+}
+.top{
+    position: absolute;
+    border-top: 200px solid rgb(33, 145, 162);
+    border-left: 185px solid transparent;
+    border-right: 185px solid transparent;
+    top: 260px;height: 0;width: 0;
+    left: 195px;
+    transition: 0.4s;
 }
 @media (max-width: 667px) {
-    .latter {
-        width: 80%;
-        height: 30%;
-        overflow: scroll; 
+    .container-fluid {
+        flex-direction: column; /* Adjust layout for smaller screens */
+        justify-content: flex-start;
+        padding: 20px;
+    }
+
+    .back {
+        width: 300px; /* Adjust size for smaller screens */
+        height: 300px;
+    }
+
+    .front {
+        border-right: 150px solid rgb(17, 138, 156); /* Adjust dimensions */
+        border-top: 150px solid transparent;
+        border-bottom: 150px solid transparent;
+        left: -150px;
+    }
+
+    .front:before {
+        border-bottom: 150px solid rgb(17, 138, 156); /* Scale down */
+        border-left: 130px solid transparent;
+        border-right: 130px solid transparent;
+        left: -190px;
+        top: -80px;
+    }
+
+    .front:after {
+        border-bottom: 150px solid rgb(16, 124, 141); /* Scale down */
+        border-left: 140px solid transparent;
+        border-right: 140px solid transparent;
+        left: -140px;
+        top: -20px;
+    }
+
+    .top {
+        border-top: 150px solid rgb(33, 145, 162); /* Scale down */
+        border-left: 140px solid transparent;
+        border-right: 140px solid transparent;
+        top: 200px;
+        left: 145px;
     }
 }
+
